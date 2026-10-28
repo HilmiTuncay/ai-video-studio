@@ -11,7 +11,7 @@ Bir videonun değişen her şeyi bu dosyadadır: başlık, sahneler, seslendirme
   "vurguKelime": "Kombi",              // başlıkta sarı yazılır
   "altBaslik": "Isıtma ve sıcak su, tek cihazda",
   "sema": "kombi",                     // src/aygitlar/index.ts kaydındaki şema
-  "format": "16:9",
+  "format": "9:16",                    // varsayılan; 16:9 de çalışır
   "hedefSn": 40,
   "ses": { "saglayici": "eleven", "kimlik": "<voice_id>", "model": "eleven_multilingual_v2" },
   "okunus": [{ "yazim": "NTC", "okunus": "en te ce" }],
@@ -21,7 +21,7 @@ Bir videonun değişen her şeyi bu dosyadadır: başlık, sahneler, seslendirme
       "id": "atesleme",                // ses dosyası adı buna bağlıdır; değiştirmeyin
       "baslik": "Ateşleme",            // sol üstteki adım başlığı (1–3 kelime)
       "ses": "Kart komut verir; fan havayı çeker, gaz valfi açılır ve brülör yanar.",
-      "kamera": { "x": 650, "y": 470, "z": 1.35 },   // ya da "pompa" gibi bir parça kimliği
+      "kamera": ["kart", "fan", "gazValfi", "brulor"], // bu parçalar güvenli alana sığdırılır
       "durum": ["kart", "fan", "gaz", "alev"],      // şemada açık olanlar
       "vurgu": ["kart", "fan", "gazValfi", "brulor"], // boşsa her şey net
       "etiketler": [{ "parca": "kart", "metin": "Elektronik kart", "yon": "sol", "soz": "kart" }]
@@ -44,7 +44,8 @@ Bir videonun değişen her şeyi bu dosyadadır: başlık, sahneler, seslendirme
 
 ## Sahne alanları
 
-- `kamera`: Odaktaki parçalar üst bant (≈150 px) ile altyazı (≈200 px) arasına düşmelidir. Kontak sayfasıyla denetlenir (`node tools/uret.mjs <aygit> kareler`).
+- `kamera`: Çerçevelenecek parçaların listesi. Güvenli alan hesabı otomatiktir, içerik biçimden bağımsız kalır. Liste daraldıkça yakınlaşma artar. Kontak sayfasıyla denetlenir (`node tools/uret.mjs <aygit> kareler`).
+- `durum` (mekanik döngü): Motor gibi aygıtlarda zaman anahtarıdır (`emme`, `is`…). Şema sahnenin ilerlemesini `p()` ile okur.
 - `durum`: Şemanın başındaki yorumda listelenen anahtarlardan seçilir. Bilinmeyen anahtar hata vermez ama hiçbir şey de yapmaz; dikkat edilir.
 - `vurgu`: Parça kimlikleri. Boruların `grup` listesindeki kimliklerden biri vurgudaysa boru da net görünür.
 - `etiketler[].soz`: Etiketi seslendirmedeki sözcüğe bağlar. Sözcüğün başı yazılır (`"eşanjördeki"` ya da `"eşanjör"`).

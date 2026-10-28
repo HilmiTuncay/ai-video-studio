@@ -44,20 +44,22 @@ export const Parca: React.FC<{ id: string | string[]; children: React.ReactNode 
 };
 
 /**
- * Boru: `akis` durum anahtarı ("isitma", "isitma|kullanim"); `grup` odak kimlikleri.
+ * Boru: `akis` durum anahtarı ("isitma", "isitma|kullanim") ya da sürekli `deger` (0..1); `grup` odak kimlikleri.
  * Geç çizilen boru öncekinin üstünden "köprü" gibi geçer (koyu kenar).
  */
-export const Boru: React.FC<{ n: Nokta[]; tip: AkisTip; akis: string; grup: string[]; kalin?: number; ters?: boolean }> = ({
+export const Boru: React.FC<{ n: Nokta[]; tip: AkisTip; akis?: string; grup: string[]; kalin?: number; ters?: boolean; deger?: number }> = ({
   n,
   tip,
   akis,
   grup,
   kalin = 14,
   ters,
+  deger,
 }) => {
-  const { d, b, v } = useSema();
-  const a = d(akis);
-  const ofset = (ters ? 1 : -1) * b(akis) * HIZ;
+  const { d, b, v, f } = useSema();
+  // deger verilirse akış durumdan değil o sayıdan gelir (ör. supap açıklığı); desen sabit hızla akar
+  const a = deger ?? d(akis ?? "");
+  const ofset = (ters ? 1 : -1) * (deger !== undefined ? f : b(akis ?? "")) * HIZ;
   const p = yol(n);
   if (tip === "elektrik") {
     return (
@@ -297,3 +299,86 @@ export const Damlalar: React.FC<{ x: number; y1: number; y2: number; akis: strin
     </g>
   );
 };
+
+// ---------------- mekanik parçalar (motor, kompresör, pistonlu pompa…) ----------------
+
+/** Krank-biyel geometrisi: aci (derece, 0 = üst ölü nokta). Piston pimi ve krank pimi konumu */
+export const krank = (aci: number, cx: number, cy: number, r: number, L: number) => {
+  const t = (aci * Math.PI) / 180;
+  const kx = cx + r * Math.sin(t);
+  const ky = cy - r * Math.cos(t);
+  const pimY = cy - (r * Math.cos(t) + Math.sqrt(L * L - (r * Math.sin(t)) ** 2));
+  return { kx, ky, pimX: cx, pimY };
+};
+
+/**
+ * Piston + biyel + krank mili. `aci` derece (0 = üst ölü nokta, saat yönü).
+ * Odak kimlikleri `ids` ile verilir (varsayılan piston / biyel / krank).
+ */
+export const KrankMekanizma: React.FC<{
+  cx: number;
+  cy: number;
+  r: number;
+  L: number;
+  aci: number;
+  pistonW: number;
+  pistonH: number;
+  ids?: { piston: string; biyel: string; krank: string };
+}> = ({ cx, cy, r, L, aci, pistonW, pistonH, ids = { piston: "piston", biyel: "biyel", krank: "krank" } }) => {
+  const k = krank(aci, cx, cy, r, L);
+  const ust = k.pimY - pistonH * 0.38;
+  return (
+    <g>
+      <Parca id={ids.krank}>
+        <g transform={`rotate(${aci} ${cx} ${cy})`}>
+          <path d={`M${cx - r * 1.25} ${cy + r * 0.35} A ${r * 1.3} ${r * 1.3} 0 0 0 ${cx + r * 1.25} ${cy + r * 0.35} L ${cx + r * 0.4} ${cy - r} L ${cx - r * 0.4} ${cy - r} Z`} fill={C.parca} stroke={C.parcaCizgi} strokeWidth={4} />
+        </g>
+        <circle cx={cx} cy={cy} r={r * 0.32} fill={C.zeminKoyu} stroke={C.parcaCizgi} strokeWidth={4} />
+      </Parca>
+      <Parca id={ids.biyel}>
+        <line x1={k.pimX} y1={k.pimY} x2={k.kx} y2={k.ky} stroke={C.zeminKoyu} strokeWidth={34} strokeLinecap="round" />
+        <line x1={k.pimX} y1={k.pimY} x2={k.kx} y2={k.ky} stroke="#9DB7DD" strokeWidth={24} strokeLinecap="round" />
+        <circle cx={k.kx} cy={k.ky} r={14} fill={C.vurgu} />
+      </Parca>
+      <Parca id={ids.piston}>
+        <rect x={cx - pistonW / 2} y={ust} width={pistonW} height={pistonH} rx={10} fill="#4F6E9C" stroke={C.parcaCizgi} strokeWidth={4} />
+        {[0.12, 0.22].map((t) => (
+          <line key={t} x1={cx - pistonW / 2} x2={cx + pistonW / 2} y1={ust + pistonH * t} y2={ust + pistonH * t} stroke={C.zeminKoyu} strokeWidth={5} />
+        ))}
+        <circle cx={k.pimX} cy={k.pimY} r={13} fill={C.zeminKoyu} stroke={C.parcaCizgi} strokeWidth={3} />
+      </Parca>
+    </g>
+  );
+};
+
+/** Supap (mantar tipi): `yuva` oturduğu y; `aciklik` 0..1 → `strok` kadar aşağı iner */
+export const Supap: React.FC<{ x: number; yuva: number; aciklik: number; w?: number; strok?: number; sap?: number }> = ({ x, yuva, aciklik, w = 70, strok = 40, sap = 150 }) => {
+  const y = yuva + aciklik * strok;
+  return (
+    <g>
+      <line x1={x} x2={x} y1={y - sap} y2={y} stroke={C.zeminKoyu} strokeWidth={18} />
+      <line x1={x} x2={x} y1={y - sap} y2={y} stroke="#B9C9E2" strokeWidth={10} />
+      <path d={`M${x - w / 2} ${y} L${x - 8} ${y - 18} L${x + 8} ${y - 18} L${x + w / 2} ${y} Z`} fill="#B9C9E2" stroke={C.zeminKoyu} strokeWidth={3} />
+      {/* yay */}
+      <path d={Array.from({ length: 6 }, (_, i) => `${i ? "L" : "M"}${x + (i % 2 ? 18 : -18)} ${y - sap + 10 + i * 12}`).join(" ")} fill="none" stroke={C.soluk} strokeWidth={4} />
+    </g>
+  );
+};
+
+/** Buji: gövde üstte, uç `uc` y'sinde; `kivilcim` 0..1 */
+export const Buji: React.FC<{ x: number; uc: number; kivilcim: number; boy?: number }> = ({ x, uc, kivilcim, boy = 170 }) => (
+  <g>
+    <rect x={x - 16} y={uc - boy} width={32} height={boy * 0.45} rx={8} fill="#E8EEF7" stroke={C.zeminKoyu} strokeWidth={3} />
+    <rect x={x - 22} y={uc - boy * 0.55} width={44} height={boy * 0.35} rx={4} fill="#8796AE" stroke={C.zeminKoyu} strokeWidth={3} />
+    <line x1={x} x2={x} y1={uc - boy * 0.2} y2={uc} stroke="#C9D3E3" strokeWidth={8} />
+    {kivilcim > 0.01 && (
+      <g opacity={kivilcim}>
+        <circle cx={x} cy={uc + 8} r={60 * kivilcim} fill={AKIS.gaz} fillOpacity={0.35} />
+        <path d={`M${x} ${uc + 8} l -14 26 l 16 -6 l -10 30`} fill="none" stroke="#FFFFFF" strokeWidth={5} strokeLinejoin="round" />
+        {[0, 60, 120, 180, 240, 300].map((a) => (
+          <line key={a} x1={x} y1={uc + 8} x2={x + 40 * kivilcim * Math.cos((a * Math.PI) / 180)} y2={uc + 8 + 40 * kivilcim * Math.sin((a * Math.PI) / 180)} stroke={AKIS.gaz} strokeWidth={4} strokeLinecap="round" />
+        ))}
+      </g>
+    )}
+  </g>
+);

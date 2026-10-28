@@ -1,6 +1,8 @@
 // Şema bağlamı: şema bileşenleri kareyi, durum değerlerini ve odak soluklaşmasını buradan okur.
 import React, { createContext, useContext, useMemo } from "react";
-import { Cizelge, gecisli, Sahne } from "./model";
+import { interpolate } from "remotion";
+import { Cizelge, gecisli, NEFES, Sahne, SES_GECIKME } from "./model";
+import { clamp, easeInOut } from "./tema";
 
 export type Sema = {
   f: number;
@@ -10,6 +12,9 @@ export type Sema = {
   b: (anahtar: string) => number;
   /** parça/boru net mi (1) soluk mu (SOLUK)? Kimliklerden biri sahnenin vurgusundaysa net */
   v: (...kimlik: string[]) => number;
+  /** durum anahtarının sahne ilerlemesi: anahtarı taşıyan her sahne 0→1 ekler (yumuşak); biten sahne 1 sayılır.
+   *  Mekanik döngüler bununla sürülür: emme sahnesi bitince p("emme") = 1 → krank 180° dönmüş olur */
+  p: (anahtar: string) => number;
 };
 
 export const SOLUK = 0.22;
@@ -41,6 +46,10 @@ export const SemaSaglayici: React.FC<{ c: Cizelge; f: number; children: React.Re
       d: (k) => gecisli(c, f, (s) => icinde(s, k)),
       b: (k) => birikimli(c, k, f),
       v: (...ids) => gecisli(c, f, (s) => (!s.vurgu?.length || ids.some((x) => s.vurgu!.includes(x)) ? 1 : SOLUK), 18),
+      p: (k) =>
+        c.yerler
+          .filter((y) => icinde(y.sahne, k))
+          .reduce((t, y) => t + interpolate(f, [y.start + SES_GECIKME + 4, y.end - NEFES], [0, 1], { ...clamp, easing: easeInOut }), 0),
     }),
     [c, f],
   );

@@ -3,15 +3,20 @@ import React from "react";
 import { Composition } from "remotion";
 import kombi from "../icerik/kombi/aygit.json";
 import kombiUretim from "../icerik/kombi/uretim.json";
+import motor from "../icerik/motor/aygit.json";
+import motorUretim from "../icerik/motor/uretim.json";
 import { Aciklayici, AciklayiciProps, hesapla } from "./motor/Aciklayici";
 import { Aygit, FPS } from "./motor/model";
 
-const AYGITLAR: AciklayiciProps[] = [{ aygit: kombi as Aygit, uretim: kombiUretim }];
+const AYGITLAR: AciklayiciProps[] = [
+  { aygit: kombi as Aygit, uretim: kombiUretim },
+  { aygit: motor as Aygit, uretim: motorUretim },
+];
 
 export const RemotionRoot: React.FC = () => (
   <>
     {AYGITLAR.map((p) => (
-      <Composition key={p.aygit.id} id={p.aygit.id} component={Aciklayici} defaultProps={p} calculateMetadata={hesapla} durationInFrames={1} fps={FPS} width={1920} height={1080} />
+      <Composition key={p.aygit.id} id={p.aygit.id} component={Aciklayici} defaultProps={p} calculateMetadata={hesapla} durationInFrames={1} fps={FPS} width={1080} height={1920} />
     ))}
   </>
 );

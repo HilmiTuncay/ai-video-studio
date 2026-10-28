@@ -1,7 +1,7 @@
 // Ana kompozisyon: her aygıt videosu bu bileşenle çizilir. Aygıta özgü olan yalnızca şema (Sema) ve içerik (aygit.json).
 import React, { useEffect, useState } from "react";
 import { Audio } from "@remotion/media";
-import { AbsoluteFill, CalculateMetadataFunction, cancelRender, continueRender, delayRender, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, CalculateMetadataFunction, cancelRender, continueRender, delayRender, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { SemaSaglayici } from "./baglam";
 import { SEMALAR } from "../aygitlar";
 import { Altyazi, Etiketler, Kapak, Kapanis, kameraAn, UstBant, useEkran, Zemin } from "./katman";
@@ -28,7 +28,8 @@ const Video: React.FC<AciklayiciProps> = ({ aygit, uretim }) => {
   if (!sema) throw new Error(`Şema kayıtlı değil: ${aygit.sema} (src/aygitlar/index.ts)`);
   const f = useCurrentFrame();
   const c = React.useMemo(() => cizelge(aygit, uretim), [aygit, uretim]);
-  const cam = kameraAn(c, f, sema.parcalar);
+  const { width, height } = useVideoConfig();
+  const cam = kameraAn(c, f, sema.parcalar, width, height);
   const E = useEkran(cam);
   const { Cizim } = sema;
 

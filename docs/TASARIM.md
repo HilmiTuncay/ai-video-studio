@@ -4,12 +4,21 @@ Her video aynı görsel dili kullanır; aygıttan aygıta yalnızca **şema** ve
 
 ## Biçim
 
-- **16:9, 1920×1080, 30 fps** (varsayılan). `format: "9:16"` modelde tanımlıdır ama dikey yerleşim henüz ayarlanmadı (bkz. yol haritası, README).
+- **9:16, 1080×1920, 30 fps (varsayılan)**: Reels / Shorts / TikTok. `format: "16:9"` (1920×1080) de desteklenir. Aynı içerik iki biçimde de çalışır, çünkü kamera parça listesiyle verilir ve biçime göre hesaplanır.
+- Yerleşim değerleri (güvenli alan, yazı boyları, altyazı yüksekliği) `katman.tsx › yerlesim()` içindedir.
+
+| Alan | 9:16 | 16:9 |
+|---|---|---|
+| Üst bant (seri + adım + ilerleme) | üstten 120 px, ilerleme başlığın altında | üstten 48 px, ilerleme sağda |
+| Odak için güvenli alan | y 360 – 1400, yan 60 | y 180 – 910, yan 110 |
+| Kapakta şema alanı | y 800 – 1520 (başlık üstte) | x 900 – 1860 (başlık solda) |
+| Altyazı | alttan 330 px (Reels arayüzünün üstü), 48 px, ≤ 34 karakter | alttan 56 px, 42 px, ≤ 58 karakter |
+
 - Hedef süre aygıt başına belirlenir (`hedefSn`). İlk test videosu 40 saniyedir.
 
 ## Akış (her videoda aynı)
 
-1. **Kapak sahnesi** (ilk sahne): solda seri adı `NASIL ÇALIŞIR?` ve büyük başlık yer alır, `vurguKelime` sarı yazılır. Şema sağda boşta durur. İlk seslendirme bu sahnede soruyu sorar.
+1. **Kapak sahnesi** (ilk sahne): seri adı `NASIL ÇALIŞIR?` ve büyük başlık yer alır (9:16'da üstte, 16:9'da solda), `vurguKelime` sarı yazılır. Şema kalan alanda boşta durur. İlk seslendirme bu sahnede soruyu sorar.
 2. **Adım sahneleri**: sol üstte `01 Adım başlığı`, sağ üstte ilerleme çizgileri bulunur. Kamera ilgili bölgeye yaklaşır, vurgu dışındaki parçalar soluklaşır. Etiketler söylendikleri anda gelir.
 3. **Kapanış** (54 kare, sessiz): kamera geri çekilir, ekran koyulaşır, seri adı ve başlık ortada görünür.
 
@@ -48,17 +57,17 @@ Renk bilgiyi tek başına taşımaz: ortamlar **kesik desenle** de ayrılır.
 
 | Öğe | Boyut (1080p) |
 |---|---|
-| Kapak başlığı | 104 px, 800 |
+| Kapak başlığı | 104 px (9:16: 112 px), 800 |
 | Kapanış başlığı | 84 px |
-| Adım başlığı | 46 px, 700 |
-| Altyazı | 42 px, 600 (tek satır hedefi ≤ 58 karakter) |
+| Adım başlığı | 46 px (9:16: 52 px), 700 |
+| Altyazı | 42 px (9:16: 48 px), 600 |
 | Etiket | 32 px, 600 |
 | Seri adı | 20–26 px mono, harf aralığı 5–8 |
 
 ## Etiketler
 
 - Parçanın çevresinde kesikli sarı bir odak çerçevesi olur. Sarı çizgi çizilerek uzar, ardından koyu zeminli sarı kenarlı kutu gelir.
-- Yön (`sol/sag/ust/alt`) verilmezse parça ekranın hangi yarısındaysa o yöne konur.
+- Yön (`sol/sag/ust/alt`) verilmezse parça ekranın hangi yarısındaysa o yöne konur. İstenen yön ekrana sığmazsa (9:16'da sık olur) önce karşı yana, sonra üste ya da alta geçilir.
 - Kutular ekran dışına, üst banda ve altyazı alanına taşmaz.
 - Sahne başına **en çok 4 etiket** konur. Etiket metni 1–3 kelimedir.
 

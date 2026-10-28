@@ -1,0 +1,153 @@
+{
+  "id": "motor",
+  "baslik": "Motor nasıl çalışır?",
+  "vurguKelime": "Motor",
+  "altBaslik": "Dört zamanlı benzinli motor",
+  "sema": "motor",
+  "format": "9:16",
+  "hedefSn": 40,
+  "ses": {
+    "saglayici": "eleven",
+    "kimlik": "gsJ9nrlXYbPztJxC4fwc",
+    "model": "eleven_multilingual_v2"
+  },
+  "okunus": [],
+  "muzik": "sakin",
+  "sahneler": [
+    {
+      "id": "giris",
+      "baslik": "Motor",
+      "ses": "Benzinli motor, küçük yanmaların gücüyle çalışır. Peki nasıl?",
+      "kamera": ["silindir", "karter", "emme", "egzoz", "buji"],
+      "durum": []
+    },
+    {
+      "id": "parcalar",
+      "baslik": "Parçalar",
+      "ses": "Silindirde bir piston, üstünde de supaplar ve buji var.",
+      "kamera": ["silindir", "buji", "emmeSupap", "egzozSupap"],
+      "durum": [],
+      "vurgu": ["silindir", "piston", "emmeSupap", "egzozSupap", "buji"],
+      "etiketler": [
+        {
+          "parca": "piston",
+          "metin": "Piston",
+          "soz": "piston"
+        },
+        {
+          "parca": "emmeSupap",
+          "metin": "Emme supabı",
+          "yon": "sol",
+          "soz": "supaplar"
+        },
+        {
+          "parca": "egzozSupap",
+          "metin": "Egzoz supabı",
+          "yon": "sag",
+          "soz": "supaplar"
+        },
+        {
+          "parca": "buji",
+          "metin": "Buji",
+          "yon": "ust",
+          "soz": "buji"
+        }
+      ]
+    },
+    {
+      "id": "emme",
+      "baslik": "1. Emme",
+      "ses": "Önce piston iner, emme supabı açılır ve hava yakıt karışımı içeri dolar.",
+      "kamera": ["emme", "silindir", "emmeSupap"],
+      "durum": ["emme"],
+      "vurgu": ["emme", "emmeSupap", "piston", "yanmaOdasi"],
+      "etiketler": [
+        {
+          "parca": "emmeSupap",
+          "metin": "Emme supabı açık",
+          "soz": "emme"
+        },
+        {
+          "parca": "emme",
+          "metin": "Hava + yakıt",
+          "yon": "ust",
+          "soz": "hava"
+        }
+      ]
+    },
+    {
+      "id": "sikistirma",
+      "baslik": "2. Sıkıştırma",
+      "ses": "Sonra supaplar kapanır; piston yukarı çıkıp karışımı sıkıştırır.",
+      "kamera": ["silindir", "emmeSupap", "egzozSupap"],
+      "durum": ["sikistirma"],
+      "vurgu": ["piston", "yanmaOdasi", "emmeSupap", "egzozSupap"],
+      "etiketler": [
+        {
+          "parca": "yanmaOdasi",
+          "metin": "Sıkışan karışım",
+          "yon": "sag",
+          "soz": "sıkıştırır"
+        }
+      ]
+    },
+    {
+      "id": "is",
+      "baslik": "3. Yanma ve iş",
+      "ses": "Buji kıvılcım çakar; karışım yanar, genleşen gazlar pistonu aşağı iter. Güç burada doğar.",
+      "kamera": ["silindir", "buji"],
+      "durum": ["is"],
+      "vurgu": ["buji", "yanmaOdasi", "piston"],
+      "etiketler": [
+        {
+          "parca": "buji",
+          "metin": "Kıvılcım",
+          "yon": "ust",
+          "soz": "kıvılcım"
+        },
+        {
+          "parca": "piston",
+          "metin": "Güç",
+          "yon": "sag",
+          "soz": "güç"
+        }
+      ]
+    },
+    {
+      "id": "egzoz",
+      "baslik": "4. Egzoz",
+      "ses": "Son olarak egzoz supabı açılır ve piston yanmış gazları dışarı atar.",
+      "kamera": ["egzoz", "silindir", "egzozSupap"],
+      "durum": ["egzoz"],
+      "vurgu": ["egzoz", "egzozSupap", "piston", "yanmaOdasi"],
+      "etiketler": [
+        {
+          "parca": "egzoz",
+          "metin": "Yanmış gazlar",
+          "yon": "ust",
+          "soz": "yanmış"
+        }
+      ]
+    },
+    {
+      "id": "krank",
+      "baslik": "Krank mili",
+      "ses": "Biyel ve krank mili, bu gidip gelmeyi dönmeye çevirir. Krank dakikada binlerce tur dönebilir.",
+      "kamera": ["silindir", "karter"],
+      "durum": ["calisma"],
+      "vurgu": ["piston", "biyel", "krank"],
+      "etiketler": [
+        {
+          "parca": "biyel",
+          "metin": "Biyel",
+          "soz": "biyel"
+        },
+        {
+          "parca": "krank",
+          "metin": "Krank mili",
+          "soz": "krank"
+        }
+      ]
+    }
+  ]
+}

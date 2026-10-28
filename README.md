@@ -3,17 +3,23 @@
 **Bir aygıtın nasıl çalıştığını anlatan kısa açıklayıcı videoları kodla üreten stüdyo.**
 Tasarım sabittir, içerik değişir. Yeni bir aygıt için gerekenler: bir şema dosyası ve bir içerik dosyası. Seslendirme (ElevenLabs), kelime zamanlı altyazı, müzik ve render tek komutla yapılır.
 
-![Kombi nasıl çalışır? kareleri](docs/gorseller/kombi-kareler.jpg)
+<p align="center">
+  <img src="docs/gorseller/kombi-kareler.jpg" alt="Kombi nasıl çalışır? kareleri" width="49%">
+  <img src="docs/gorseller/motor-kareler.jpg" alt="Motor nasıl çalışır? kareleri" width="49%">
+</p>
 
-> İlk örnek: **Kombi nasıl çalışır?** (40 sn, 1920×1080) → [`ornekler/kombi.mp4`](ornekler/kombi.mp4)
+> Örnekler (9:16, 1080×1920, ≈ 40 sn): **Kombi nasıl çalışır?** → [`ornekler/kombi.mp4`](ornekler/kombi.mp4) · **Motor nasıl çalışır?** (dört zamanlı benzinli) → [`ornekler/motor.mp4`](ornekler/motor.mp4)
+>
+> İki aygıt aynı motorla üretildi. Kombi aç/kapa durumlarla ve akışlarla anlatılıyor, motor sürekli bir mekanik döngüyle (krank açısı). Aygıta özgü kod yalnızca şema ve içerik dosyalarında.
 
 ---
 
 ## Özellikler
 
+- **Dikey öncelikli.** Varsayılan 9:16 (Reels/Shorts). Kamera parça listesiyle verildiği için aynı içerik 16:9'da da çalışır.
 - **Sabit görsel dil.** Koyu teknik çizim zemini üzerinde düz kesit şemalar. Akış renklerinin anlamı sabittir (sıcak su, dönüş, şebeke suyu, gaz, baca gazı, elektrik…). Renk körlüğü için akışlar ayrıca desenle ayrılır.
 - **Animasyonun tamamı kodla.** Borularda akan su, dönen pompa ve fan, titreyen alev, dönen vana. Odaktaki parça dışında her şey soluklaşır, sanal kamera parçaya yaklaşır. Hepsi kareye bağlı ve deterministiktir.
-- **Veriyle sahne.** Her sahne bir seslendirme cümlesi, açık durumlar (ör. `"isitma"`, `"kullanim"`), odak parçaları, kamera ve etiketlerden oluşur.
+- **Veriyle sahne.** Her sahne bir seslendirme cümlesi, açık durumlar (ör. `"isitma"`, `"emme"`), odak parçaları, kamera (parça listesi) ve etiketlerden oluşur. Mekanik döngüler sahne ilerlemesiyle sürülür.
 - **ElevenLabs seslendirmesi ve kelime zamanları.** Sahne süresi sesin uzunluğundan gelir. Etiketler sözcüğü söylendiği anda belirir (`"soz": "pompa"`), altyazıda söylenen kelime vurgulanır.
 - **Türkçe okunuş katmanı.** Metin resmi yazımla durur (altyazı bunu gösterir). Ses motoruna kısaltma, sayı ve adreslerin okunuşu gider.
 - **Artımlı üretim.** Yalnızca metni, okunuşu ya da ses ayarı değişen sahneler yeniden seslendirilir.
@@ -42,12 +48,12 @@ setx ELEVENLABS_API_KEY "sk_..."
 export ELEVENLABS_API_KEY="sk_..."
 ```
 
-> Kombi örneğinin seslendirmesi ve müziği repoda hazırdır. Anahtar olmadan da `render` alınabilir.
+> Örneklerin seslendirmesi ve müziği repoda hazırdır. Anahtar olmadan da `render` alınabilir.
 
 ## Hızlı başlangıç
 
 ```bash
-node tools/uret.mjs kombi render      # repodaki seslerle videoyu üret → out/kombi/kombi.mp4
+node tools/uret.mjs kombi render      # repodaki seslerle videoyu üret → out/kombi/kombi.mp4 (ya da: motor)
 npm run studio                        # Remotion Studio'da kare kare önizleme
 node tools/uret.mjs kombi kareler     # still görüntüler + kontak sayfası → out/kombi/kontak.jpg
 node tools/uret.mjs kombi             # hepsi: ses → müzik → render
@@ -89,8 +95,9 @@ src/motor/
   tema.ts        renkler, akış renkleri, yazı tipleri
   model.ts       veri modeli, zaman çizelgesi (sahne süresi = ses + nefes)
   baglam.tsx     şema bağlamı: durum değerleri, birikim, odak
-  parcalar.tsx   parça kütüphanesi: Boru, Pompa, Fan, Alev, Esanjor, Plaka, Vana3, Kart, Sensor, Petek, Musluk…
-  katman.tsx     kamera, etiketler, üst bant, kapak, kapanış, altyazı
+  parcalar.tsx   parça kütüphanesi: Boru, Pompa, Fan, Alev, Esanjor, Plaka, Vana3, Kart, Sensor, Petek, Musluk,
+                 KrankMekanizma, Supap, Buji…
+  katman.tsx     biçime göre yerleşim, otomatik kamera, etiketler, üst bant, kapak, kapanış, altyazı
   Aciklayici.tsx ana kompozisyon (müzik ducking, seslendirme, geçiş sesi)
 tools/
   uret.mjs       üretim hattı
@@ -107,7 +114,7 @@ tools/
   "id": "isinma",
   "baslik": "Suyun ısınması",
   "ses": "Alev, ana eşanjördeki suyu ısıtır. Pompa bu suyu peteklere gönderir.",
-  "kamera": { "x": 780, "y": 520, "z": 1.4 },
+  "kamera": ["hx", "brulor", "pompa", "vana"],
   "durum": ["kart", "fan", "gaz", "alev", "isitma"],
   "vurgu": ["hx", "brulor", "pompa", "vana"],
   "etiketler": [
@@ -129,11 +136,13 @@ tools/
 | [docs/URETIM.md](docs/URETIM.md) | Üretim hattı, çıktılar, doğrulama listesi |
 | [docs/DUZELTMELER.md](docs/DUZELTMELER.md) | Düzeltmeler günlüğü ve kalıcı kurallar (yaşayan belge) |
 | [docs/aygitlar/kombi.md](docs/aygitlar/kombi.md) | Kombi teknik notu: parçalar, çalışma, kaçınılacak yanlışlar |
+| [docs/aygitlar/motor.md](docs/aygitlar/motor.md) | Dört zamanlı motor teknik notu |
 
 Claude Code ile çalışırken ajan talimatları [CLAUDE.md](CLAUDE.md) dosyasındadır.
 
 ## Yol haritası
 
-- [ ] 9:16 dikey yerleşim (Reels/Shorts): kamera ve etiket yerleşimi formatına göre
+- [x] 9:16 dikey yerleşim (varsayılan), aynı içerikle 16:9
+- [x] Genellik testi: içten yanmalı motor
 - [ ] Yeni aygıtlar: buzdolabı, klima, çamaşır makinesi…
 - [ ] Parça kütüphanesine kompresör, tambur, motor ve kayış eklenmesi

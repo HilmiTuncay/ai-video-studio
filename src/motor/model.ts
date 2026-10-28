@@ -3,7 +3,7 @@ import { interpolate } from "remotion";
 import { clamp, easeInOut } from "./tema";
 
 export const FPS = 30;
-export const BOYUT = { "16:9": [1920, 1080], "9:16": [1080, 1920] } as const;
+export const BOYUT = { "9:16": [1080, 1920], "16:9": [1920, 1080] } as const; // varsayılan 9:16
 export const GIRIS = 0; // ilk sahne kapak başlığını da taşır; ayrı sessiz giriş yok
 export const KAPANIS = 54; // son kart (sessiz)
 export const NEFES = 8; // seslendirme bitince sahnenin sürdüğü kare
@@ -12,13 +12,16 @@ export const DURUM_GECIS = 15; // akış/vana/odak değişimi süresi
 export const KAMERA_GECIS = 26;
 export const HECE_SN = 5.0; // ses yokken süre tahmini: ElevenLabs Türkçe, speed 1.1 ölçümü (docs/SES.md)
 
+/** Kamera: dünya merkezi + yakınlaşma (z = 1 → dünya genişliği ekran genişliğine sığar) */
 export type Kamera = { x: number; y: number; z: number };
+/** İçerikte kamera: tercihen çerçevelenecek parça kimlikleri (biçimden bağımsız); ya da tek kimlik / açık Kamera */
+export type KameraHedef = Kamera | string | string[];
 export type Etiket = { parca: string; metin: string; yon?: "sol" | "sag" | "ust" | "alt"; soz?: string };
 export type Sahne = {
   id: string;
   baslik: string; // sol üstteki adım başlığı
   ses: string; // seslendirme (resmi yazım; altyazı bunu gösterir)
-  kamera: Kamera | string; // dünya koordinatı ya da parça kimliği
+  kamera: KameraHedef; // ["pompa","vana"] → bu parçalar güvenli alana sığdırılır (9:16 ve 16:9'da ayrı hesaplanır)
   durum: string[]; // şemadaki açık durumlar (akışlar, alev, vana konumu…)
   vurgu?: string[]; // boşsa her şey net; doluysa bunlar dışındaki parçalar soluklaşır
   etiketler?: Etiket[];

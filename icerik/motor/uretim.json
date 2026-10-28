@@ -1,0 +1,444 @@
+{
+ "ses": {
+  "giris": {
+   "src": "aygitlar/motor/ses/giris-16af16a4.mp3",
+   "frames": 122,
+   "metin": "Benzinli motor, küçük yanmaların gücüyle çalışır. Peki nasıl?",
+   "okunan": "Benzinli motor, küçük yanmaların gücüyle çalışır. Peki nasıl?",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Benzinli",
+     "bas": 0,
+     "son": 14
+    },
+    {
+     "k": "motor,",
+     "bas": 15,
+     "son": 28
+    },
+    {
+     "k": "küçük",
+     "bas": 32,
+     "son": 41
+    },
+    {
+     "k": "yanmaların",
+     "bas": 43,
+     "son": 56
+    },
+    {
+     "k": "gücüyle",
+     "bas": 57,
+     "son": 67
+    },
+    {
+     "k": "çalışır.",
+     "bas": 69,
+     "son": 84
+    },
+    {
+     "k": "Peki",
+     "bas": 98,
+     "son": 104
+    },
+    {
+     "k": "nasıl?",
+     "bas": 106,
+     "son": 124
+    }
+   ]
+  },
+  "parcalar": {
+   "src": "aygitlar/motor/ses/parcalar-aea37ab1.mp3",
+   "frames": 104,
+   "metin": "Silindirde bir piston, üstünde de supaplar ve buji var.",
+   "okunan": "Silindirde bir piston, üstünde de supaplar ve buji var.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Silindirde",
+     "bas": 0,
+     "son": 17
+    },
+    {
+     "k": "bir",
+     "bas": 18,
+     "son": 21
+    },
+    {
+     "k": "piston,",
+     "bas": 23,
+     "son": 39
+    },
+    {
+     "k": "üstünde",
+     "bas": 46,
+     "son": 57
+    },
+    {
+     "k": "de",
+     "bas": 59,
+     "son": 61
+    },
+    {
+     "k": "supaplar",
+     "bas": 63,
+     "son": 76
+    },
+    {
+     "k": "ve",
+     "bas": 78,
+     "son": 80
+    },
+    {
+     "k": "buji",
+     "bas": 82,
+     "son": 88
+    },
+    {
+     "k": "var.",
+     "bas": 90,
+     "son": 106
+    }
+   ]
+  },
+  "emme": {
+   "src": "aygitlar/motor/ses/emme-0f5261fc.mp3",
+   "frames": 138,
+   "metin": "Önce piston iner, emme supabı açılır ve hava yakıt karışımı içeri dolar.",
+   "okunan": "Önce piston iner, emme supabı açılır ve hava yakıt karışımı içeri dolar.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Önce",
+     "bas": 0,
+     "son": 8
+    },
+    {
+     "k": "piston",
+     "bas": 10,
+     "son": 21
+    },
+    {
+     "k": "iner,",
+     "bas": 22,
+     "son": 35
+    },
+    {
+     "k": "emme",
+     "bas": 40,
+     "son": 48
+    },
+    {
+     "k": "supabı",
+     "bas": 49,
+     "son": 58
+    },
+    {
+     "k": "açılır",
+     "bas": 60,
+     "son": 72
+    },
+    {
+     "k": "ve",
+     "bas": 79,
+     "son": 83
+    },
+    {
+     "k": "hava",
+     "bas": 84,
+     "son": 89
+    },
+    {
+     "k": "yakıt",
+     "bas": 90,
+     "son": 97
+    },
+    {
+     "k": "karışımı",
+     "bas": 98,
+     "son": 109
+    },
+    {
+     "k": "içeri",
+     "bas": 110,
+     "son": 118
+    },
+    {
+     "k": "dolar.",
+     "bas": 119,
+     "son": 138
+    }
+   ]
+  },
+  "sikistirma": {
+   "src": "aygitlar/motor/ses/sikistirma-f4ba6b1a.mp3",
+   "frames": 130,
+   "metin": "Sonra supaplar kapanır; piston yukarı çıkıp karışımı sıkıştırır.",
+   "okunan": "Sonra supaplar kapanır; piston yukarı çıkıp karışımı sıkıştırır.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Sonra",
+     "bas": 0,
+     "son": 15
+    },
+    {
+     "k": "supaplar",
+     "bas": 17,
+     "son": 31
+    },
+    {
+     "k": "kapanır;",
+     "bas": 33,
+     "son": 49
+    },
+    {
+     "k": "piston",
+     "bas": 59,
+     "son": 71
+    },
+    {
+     "k": "yukarı",
+     "bas": 73,
+     "son": 82
+    },
+    {
+     "k": "çıkıp",
+     "bas": 83,
+     "son": 91
+    },
+    {
+     "k": "karışımı",
+     "bas": 93,
+     "son": 104
+    },
+    {
+     "k": "sıkıştırır.",
+     "bas": 106,
+     "son": 132
+    }
+   ]
+  },
+  "is": {
+   "src": "aygitlar/motor/ses/is-98f6d9dd.mp3",
+   "frames": 206,
+   "metin": "Buji kıvılcım çakar; karışım yanar, genleşen gazlar pistonu aşağı iter. Güç burada doğar.",
+   "okunan": "Buji kıvılcım çakar; karışım yanar, genleşen gazlar pistonu aşağı iter. Güç burada doğar.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Buji",
+     "bas": 0,
+     "son": 9
+    },
+    {
+     "k": "kıvılcım",
+     "bas": 10,
+     "son": 23
+    },
+    {
+     "k": "çakar;",
+     "bas": 25,
+     "son": 40
+    },
+    {
+     "k": "karışım",
+     "bas": 50,
+     "son": 62
+    },
+    {
+     "k": "yanar,",
+     "bas": 64,
+     "son": 77
+    },
+    {
+     "k": "genleşen",
+     "bas": 84,
+     "son": 100
+    },
+    {
+     "k": "gazlar",
+     "bas": 102,
+     "son": 113
+    },
+    {
+     "k": "pistonu",
+     "bas": 115,
+     "son": 125
+    },
+    {
+     "k": "aşağı",
+     "bas": 126,
+     "son": 135
+    },
+    {
+     "k": "iter.",
+     "bas": 136,
+     "son": 149
+    },
+    {
+     "k": "Güç",
+     "bas": 160,
+     "son": 168
+    },
+    {
+     "k": "burada",
+     "bas": 176,
+     "son": 186
+    },
+    {
+     "k": "doğar.",
+     "bas": 187,
+     "son": 206
+    }
+   ]
+  },
+  "egzoz": {
+   "src": "aygitlar/motor/ses/egzoz-b8e9e3bf.mp3",
+   "frames": 125,
+   "metin": "Son olarak egzoz supabı açılır ve piston yanmış gazları dışarı atar.",
+   "okunan": "Son olarak egzoz supabı açılır ve piston yanmış gazları dışarı atar.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Son",
+     "bas": 0,
+     "son": 7
+    },
+    {
+     "k": "olarak",
+     "bas": 9,
+     "son": 17
+    },
+    {
+     "k": "egzoz",
+     "bas": 20,
+     "son": 29
+    },
+    {
+     "k": "supabı",
+     "bas": 30,
+     "son": 39
+    },
+    {
+     "k": "açılır",
+     "bas": 40,
+     "son": 52
+    },
+    {
+     "k": "ve",
+     "bas": 58,
+     "son": 62
+    },
+    {
+     "k": "piston",
+     "bas": 63,
+     "son": 74
+    },
+    {
+     "k": "yanmış",
+     "bas": 75,
+     "son": 84
+    },
+    {
+     "k": "gazları",
+     "bas": 85,
+     "son": 96
+    },
+    {
+     "k": "dışarı",
+     "bas": 97,
+     "son": 106
+    },
+    {
+     "k": "atar.",
+     "bas": 107,
+     "son": 125
+    }
+   ]
+  },
+  "krank": {
+   "src": "aygitlar/motor/ses/krank-bcf9aa08.mp3",
+   "frames": 193,
+   "metin": "Biyel ve krank mili, bu gidip gelmeyi dönmeye çevirir. Krank dakikada binlerce tur dönebilir.",
+   "okunan": "Biyel ve krank mili, bu gidip gelmeyi dönmeye çevirir. Krank dakikada binlerce tur dönebilir.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Biyel",
+     "bas": 0,
+     "son": 11
+    },
+    {
+     "k": "ve",
+     "bas": 13,
+     "son": 15
+    },
+    {
+     "k": "krank",
+     "bas": 17,
+     "son": 25
+    },
+    {
+     "k": "mili,",
+     "bas": 27,
+     "son": 39
+    },
+    {
+     "k": "bu",
+     "bas": 44,
+     "son": 48
+    },
+    {
+     "k": "gidip",
+     "bas": 49,
+     "son": 56
+    },
+    {
+     "k": "gelmeyi",
+     "bas": 57,
+     "son": 67
+    },
+    {
+     "k": "dönmeye",
+     "bas": 68,
+     "son": 79
+    },
+    {
+     "k": "çevirir.",
+     "bas": 81,
+     "son": 97
+    },
+    {
+     "k": "Krank",
+     "bas": 116,
+     "son": 125
+    },
+    {
+     "k": "dakikada",
+     "bas": 126,
+     "son": 145
+    },
+    {
+     "k": "binlerce",
+     "bas": 149,
+     "son": 164
+    },
+    {
+     "k": "tur",
+     "bas": 165,
+     "son": 170
+    },
+    {
+     "k": "dönebilir.",
+     "bas": 171,
+     "son": 195
+    }
+   ]
+  }
+ },
+ "muzik": "aygitlar/motor/muzik.wav",
+ "muzikKare": 1149
+}

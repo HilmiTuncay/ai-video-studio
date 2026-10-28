@@ -35,9 +35,10 @@ Teknik doğruluk, bu videoların asıl değeridir. Bir yapay zekâ ajanı (Claud
 
 ## Dünya ve kamera
 
-- Şema **1920×1080 dünya koordinatında** çizilir (`DUNYA`). Kamera `{x, y, z}` biçimindedir: dünya merkezi ve yakınlaşma.
-- `kamera` alanına parça kimliği de yazılabilir (`"pompa"`). Bu durumda kamera parçanın kutusuna sığacak şekilde merkezlenir (en çok `z = 2.2`).
-- 16:9'da üst bant (~150 px) ve altyazı (~200 px) bölgesi boş tutulur. Kamera, odaktaki parçalar bu bölgelere düşmeyecek şekilde seçilir.
+- Şema her aygıtta **1920×1080 dünya koordinatında** çizilir (`DUNYA`). Dikey (9:16) videoda da dünya aynıdır, kamera çerçeveler.
+- **Kamera tercihen parça listesiyle verilir**: `"kamera": ["pompa", "vana"]`. Bu parçaların kutuları birleştirilir ve biçimin güvenli alanına sığdırılır (ilk sahnede kapak alanına). Böylece aynı içerik 9:16 ve 16:9'da doğru çerçevelenir. Yakınlaşma en çok `z = 2.6` olur.
+- Açık kamera da verilebilir: `{x, y, z}` (dünya merkezi; z = 1 → dünya genişliği ekran genişliğine sığar). Bu biçime bağlı olduğu için kaçınılır.
+- Kapanışta kamera bütün parçaları gösterecek şekilde geri çekilir.
 
 ## Parça kütüphanesi (`src/motor/parcalar.tsx`)
 
@@ -56,6 +57,9 @@ Teknik doğruluk, bu videoların asıl değeridir. Bir yapay zekâ ajanı (Claud
 | `Petek` | Radyatör (ısınır, ısı dalgası çıkar) | `isi` |
 | `Musluk` | Musluk ve lavabo (kol döner, su akar) | `acik` |
 | `Damlalar` | Yoğuşma damlaları | `akis` |
+| `KrankMekanizma` | Piston + biyel + krank mili (`krank()` geometrisiyle) | `cx cy r L aci pistonW pistonH ids` |
+| `Supap` | Mantar tipi supap (yaylı) | `x yuva aciklik strok` |
+| `Buji` | Buji ve kıvılcım | `x uc kivilcim` |
 | `Parca` | Odak sarmalayıcısı (soluklaşma) | `id` |
 
 Yeni bir parça gerekiyorsa önce bu kütüphaneye **genel** bir bileşen olarak eklenir. Yalnızca bir aygıta özgü olan parça, o aygıtın `Sema.tsx` dosyasında kalır (örnek: kombideki `GazValfi`). Kütüphaneye eklenen her parça bu tabloya da yazılır.
@@ -68,5 +72,16 @@ Yeni bir parça gerekiyorsa önce bu kütüphaneye **genel** bir bileşen olarak
 - `d("isitma|kullanim")`: iki durumdan biri açıksa 1.
 - `b("fan")`: birikim (dönme ve akış için).
 - `v("pompa", "hx")`: odak opaklığı. Sahnenin `vurgu` listesi boşsa her şey nettir.
+- `p("emme")`: **sahne ilerlemesi**. Anahtarı taşıyan her sahne 0→1 ekler (yumuşak), biten sahne 1 sayılır. Mekanik döngüler bununla sürülür. Örnek, motorda: `aci = 180 × (p("emme") + p("sikistirma") + p("is") + p("egzoz"))`. Supap açıklığı, kıvılcım ve gaz rengi bu açıdan hesaplanır, sahneler yalnızca zamanı seçer.
+
+Borular iki biçimde sürülür: durumla (`akis="isitma"`) ya da sürekli bir değerle (`deger={supapAcikligi}`, 0..1).
+
+### İki tür aygıt, aynı motor
+
+| | Kombi | Motor |
+|---|---|---|
+| Hareketin kaynağı | Aç/kapa durumlar (`d()`), akışlar | Sürekli döngü (`p()` → krank açısı) |
+| Şemaya özgü kod | `GazValfi` | Gaz rengi ve supap zamanlaması (açıdan) |
+| Kütüphaneye eklenen | — | `KrankMekanizma`, `Supap`, `Buji` (genel: kompresör, pistonlu pompa…) |
 
 Her şema, kullandığı anahtarları dosyanın başında yorum olarak listeler.

@@ -4,7 +4,7 @@
   "vurguKelime": "Kombi",
   "altBaslik": "Isıtma ve sıcak su, tek cihazda",
   "sema": "kombi",
-  "format": "16:9",
+  "format": "9:16",
   "hedefSn": 40,
   "ses": {
     "saglayici": "eleven",
@@ -18,35 +18,16 @@
       "id": "giris",
       "baslik": "Kombi",
       "ses": "Kombi, hem evi hem de musluk suyunu ısıtır. Peki nasıl?",
-      "kamera": {
-        "x": 430,
-        "y": 540,
-        "z": 0.95
-      },
+      "kamera": ["kasa", "petek", "musluk"],
       "durum": []
     },
     {
       "id": "atesleme",
       "baslik": "Ateşleme",
       "ses": "Kart komut verir; fan havayı çeker, gaz valfi açılır ve brülör yanar.",
-      "kamera": {
-        "x": 650,
-        "y": 470,
-        "z": 1.35
-      },
-      "durum": [
-        "kart",
-        "fan",
-        "gaz",
-        "alev"
-      ],
-      "vurgu": [
-        "kart",
-        "fan",
-        "gazValfi",
-        "brulor",
-        "baca"
-      ],
+      "kamera": ["kart", "fan", "gazValfi", "brulor"],
+      "durum": ["kart", "fan", "gaz", "alev"],
+      "vurgu": ["kart", "fan", "gazValfi", "brulor", "baca"],
       "etiketler": [
         {
           "parca": "kart",
@@ -78,24 +59,9 @@
       "id": "isinma",
       "baslik": "Suyun ısınması",
       "ses": "Alev, ana eşanjördeki suyu ısıtır. Pompa bu suyu peteklere gönderir.",
-      "kamera": {
-        "x": 780,
-        "y": 520,
-        "z": 1.4
-      },
-      "durum": [
-        "kart",
-        "fan",
-        "gaz",
-        "alev",
-        "isitma"
-      ],
-      "vurgu": [
-        "hx",
-        "brulor",
-        "pompa",
-        "vana"
-      ],
+      "kamera": ["hx", "brulor", "pompa", "vana"],
+      "durum": ["kart", "fan", "gaz", "alev", "isitma"],
+      "vurgu": ["hx", "brulor", "pompa", "vana"],
       "etiketler": [
         {
           "parca": "hx",
@@ -115,18 +81,8 @@
       "id": "devre",
       "baslik": "Isıtma devresi",
       "ses": "Su, petekleri ısıtıp soğur ve kombiye geri döner. Bu, kapalı bir devredir.",
-      "kamera": {
-        "x": 1060,
-        "y": 560,
-        "z": 0.95
-      },
-      "durum": [
-        "kart",
-        "fan",
-        "gaz",
-        "alev",
-        "isitma"
-      ],
+      "kamera": ["kasa", "petek"],
+      "durum": ["kart", "fan", "gaz", "alev", "isitma"],
       "etiketler": [
         {
           "parca": "petek",
@@ -146,24 +102,9 @@
       "id": "musluk",
       "baslik": "Musluk açılınca",
       "ses": "Musluğu açınca akış sensörü bunu algılar. Üç yollu vana, sıcak suyu plakalı eşanjöre çevirir.",
-      "kamera": {
-        "x": 1080,
-        "y": 700,
-        "z": 1.35
-      },
-      "durum": [
-        "kart",
-        "fan",
-        "gaz",
-        "alev",
-        "kullanim"
-      ],
-      "vurgu": [
-        "sensor",
-        "vana",
-        "plaka",
-        "musluk"
-      ],
+      "kamera": ["sensor", "vana", "plaka", "musluk"],
+      "durum": ["kart", "fan", "gaz", "alev", "kullanim"],
+      "vurgu": ["sensor", "vana", "plaka", "musluk"],
       "etiketler": [
         {
           "parca": "sensor",
@@ -189,23 +130,9 @@
       "id": "sicaksu",
       "baslik": "Anında sıcak su",
       "ses": "Şebeke suyu orada anında ısınır ve musluğa akar.",
-      "kamera": {
-        "x": 1200,
-        "y": 740,
-        "z": 1.3
-      },
-      "durum": [
-        "kart",
-        "fan",
-        "gaz",
-        "alev",
-        "kullanim"
-      ],
-      "vurgu": [
-        "plaka",
-        "musluk",
-        "sebeke"
-      ],
+      "kamera": ["plaka", "musluk", "sebeke"],
+      "durum": ["kart", "fan", "gaz", "alev", "kullanim"],
+      "vurgu": ["plaka", "musluk", "sebeke"],
       "etiketler": [
         {
           "parca": "sebeke",
@@ -225,26 +152,9 @@
       "id": "yogusma",
       "baslik": "Yoğuşma",
       "ses": "Yoğuşmalı kombi, baca gazındaki buhardan da ısı kazanır. Böylece daha az gaz harcar.",
-      "kamera": {
-        "x": 720,
-        "y": 400,
-        "z": 1.5
-      },
-      "durum": [
-        "kart",
-        "fan",
-        "gaz",
-        "alev",
-        "isitma",
-        "yogusma"
-      ],
-      "vurgu": [
-        "hx",
-        "baca",
-        "yogusma",
-        "brulor",
-        "fan"
-      ],
+      "kamera": ["hx", "baca", "yogusma"],
+      "durum": ["kart", "fan", "gaz", "alev", "isitma", "yogusma"],
+      "vurgu": ["hx", "baca", "yogusma", "brulor", "fan"],
       "etiketler": [
         {
           "parca": "baca",

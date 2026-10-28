@@ -21,6 +21,8 @@
 - [ ] `PARCALAR`: kamera hedefleri ve etiket çapaları (dünya koordinatında kutular).
 - [ ] Çizimi yalnızca `src/motor/parcalar.tsx` bileşenleriyle kur. Eksik bir parça genelse kütüphaneye ekle ve [ANIMASYON.md](ANIMASYON.md)'deki tabloya yaz. Aygıta özgüyse şema dosyasında bırak.
 - [ ] Borular dik olsun, kesişme olmasın. Kaçınılmazsa sonra çizilen boru köprü olur.
+- [ ] Hareket türünü seç: aç/kapa durumlar (`d()`, kombi gibi) ya da sürekli döngü (`p()` ile açı/konum, motor gibi). Döngüde ara değerler (supap, kıvılcım, renk) açıdan hesaplanır.
+- [ ] Şemaya aygıta özgü bir çözüm yazıyorsan sor: başka aygıtta da gerekir mi? Gerekiyorsa motora ya da kütüphaneye taşı (K7).
 - [ ] Çizim sırası: kasa → sinyal kabloları → borular → parçalar (`<Parca id>` içinde).
 
 ## 4. Kayıt
