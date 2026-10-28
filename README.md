@@ -8,7 +8,7 @@ Tasarım sabittir, içerik değişir. Yeni bir aygıt için gerekenler: bir şem
   <img src="docs/gorseller/motor-kareler.jpg" alt="Motor nasıl çalışır? kareleri" width="49%">
 </p>
 
-> Örnekler (9:16, 1080×1920, ≈ 40 sn): **Kombi nasıl çalışır?** → [`ornekler/kombi.mp4`](ornekler/kombi.mp4) · **Motor nasıl çalışır?** (dört zamanlı benzinli) → [`ornekler/motor.mp4`](ornekler/motor.mp4)
+> Örnekler (9:16, 1080×1920, ≈ 40 sn): **Kombi nasıl çalışır?** → [`ornekler/kombi.mp4`](ornekler/kombi.mp4) (16:9 hali: [`ornekler/kombi-16x9.mp4`](ornekler/kombi-16x9.mp4)) · **Motor nasıl çalışır?** (dört zamanlı benzinli) → [`ornekler/motor.mp4`](ornekler/motor.mp4)
 >
 > İki aygıt aynı motorla üretildi. Kombi aç/kapa durumlarla ve akışlarla anlatılıyor, motor sürekli bir mekanik döngüyle (krank açısı). Aygıta özgü kod yalnızca şema ve içerik dosyalarında.
 
