@@ -1,0 +1,9 @@
+node_modules/
+out/
+.env
+.env.*
+*.log
+__pycache__/
+*.pyc
+.venv/
+public/aygitlar/*/ses/_ham.mp3

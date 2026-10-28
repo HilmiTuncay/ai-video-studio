@@ -1,0 +1,30 @@
+{
+  "name": "ai-video-studio",
+  "version": "0.1.0",
+  "description": "Aygıt nasıl çalışır? açıklayıcı videoları: sabit tasarım (Remotion motoru) + değişen içerik (icerik/<aygit>)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "uret": "node tools/uret.mjs",
+    "tsc": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.534",
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/media": "4.0.534",
+    "@remotion/noise": "4.0.534",
+    "@remotion/renderer": "^4.0.534",
+    "@remotion/transitions": "4.0.534",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@types/web": "0.0.166",
+    "typescript": "5.9.3"
+  }
+}

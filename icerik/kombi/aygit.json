@@ -1,0 +1,264 @@
+{
+  "id": "kombi",
+  "baslik": "Kombi nasıl çalışır?",
+  "vurguKelime": "Kombi",
+  "altBaslik": "Isıtma ve sıcak su, tek cihazda",
+  "sema": "kombi",
+  "format": "16:9",
+  "hedefSn": 40,
+  "ses": {
+    "saglayici": "eleven",
+    "kimlik": "gsJ9nrlXYbPztJxC4fwc",
+    "model": "eleven_multilingual_v2"
+  },
+  "okunus": [],
+  "muzik": "sakin",
+  "sahneler": [
+    {
+      "id": "giris",
+      "baslik": "Kombi",
+      "ses": "Kombi, hem evi hem de musluk suyunu ısıtır. Peki nasıl?",
+      "kamera": {
+        "x": 430,
+        "y": 540,
+        "z": 0.95
+      },
+      "durum": []
+    },
+    {
+      "id": "atesleme",
+      "baslik": "Ateşleme",
+      "ses": "Kart komut verir; fan havayı çeker, gaz valfi açılır ve brülör yanar.",
+      "kamera": {
+        "x": 650,
+        "y": 470,
+        "z": 1.35
+      },
+      "durum": [
+        "kart",
+        "fan",
+        "gaz",
+        "alev"
+      ],
+      "vurgu": [
+        "kart",
+        "fan",
+        "gazValfi",
+        "brulor",
+        "baca"
+      ],
+      "etiketler": [
+        {
+          "parca": "kart",
+          "metin": "Elektronik kart",
+          "yon": "sol",
+          "soz": "kart"
+        },
+        {
+          "parca": "fan",
+          "metin": "Fan",
+          "yon": "sag",
+          "soz": "fan"
+        },
+        {
+          "parca": "gazValfi",
+          "metin": "Gaz valfi",
+          "yon": "sol",
+          "soz": "gaz"
+        },
+        {
+          "parca": "brulor",
+          "metin": "Brülör",
+          "yon": "sag",
+          "soz": "brülör"
+        }
+      ]
+    },
+    {
+      "id": "isinma",
+      "baslik": "Suyun ısınması",
+      "ses": "Alev, ana eşanjördeki suyu ısıtır. Pompa bu suyu peteklere gönderir.",
+      "kamera": {
+        "x": 780,
+        "y": 520,
+        "z": 1.4
+      },
+      "durum": [
+        "kart",
+        "fan",
+        "gaz",
+        "alev",
+        "isitma"
+      ],
+      "vurgu": [
+        "hx",
+        "brulor",
+        "pompa",
+        "vana"
+      ],
+      "etiketler": [
+        {
+          "parca": "hx",
+          "metin": "Ana eşanjör",
+          "yon": "sol",
+          "soz": "eşanjördeki"
+        },
+        {
+          "parca": "pompa",
+          "metin": "Pompa",
+          "yon": "sol",
+          "soz": "pompa"
+        }
+      ]
+    },
+    {
+      "id": "devre",
+      "baslik": "Isıtma devresi",
+      "ses": "Su, petekleri ısıtıp soğur ve kombiye geri döner. Bu, kapalı bir devredir.",
+      "kamera": {
+        "x": 1060,
+        "y": 560,
+        "z": 0.95
+      },
+      "durum": [
+        "kart",
+        "fan",
+        "gaz",
+        "alev",
+        "isitma"
+      ],
+      "etiketler": [
+        {
+          "parca": "petek",
+          "metin": "Petek",
+          "yon": "ust",
+          "soz": "petekleri"
+        },
+        {
+          "parca": "devre",
+          "metin": "Kapalı devre",
+          "yon": "alt",
+          "soz": "kapalı"
+        }
+      ]
+    },
+    {
+      "id": "musluk",
+      "baslik": "Musluk açılınca",
+      "ses": "Musluğu açınca akış sensörü bunu algılar. Üç yollu vana, sıcak suyu plakalı eşanjöre çevirir.",
+      "kamera": {
+        "x": 1080,
+        "y": 700,
+        "z": 1.35
+      },
+      "durum": [
+        "kart",
+        "fan",
+        "gaz",
+        "alev",
+        "kullanim"
+      ],
+      "vurgu": [
+        "sensor",
+        "vana",
+        "plaka",
+        "musluk"
+      ],
+      "etiketler": [
+        {
+          "parca": "sensor",
+          "metin": "Akış sensörü",
+          "yon": "sag",
+          "soz": "akış"
+        },
+        {
+          "parca": "vana",
+          "metin": "Üç yollu vana",
+          "yon": "sol",
+          "soz": "üç"
+        },
+        {
+          "parca": "plaka",
+          "metin": "Plakalı eşanjör",
+          "yon": "sol",
+          "soz": "plakalı"
+        }
+      ]
+    },
+    {
+      "id": "sicaksu",
+      "baslik": "Anında sıcak su",
+      "ses": "Şebeke suyu orada anında ısınır ve musluğa akar.",
+      "kamera": {
+        "x": 1200,
+        "y": 740,
+        "z": 1.3
+      },
+      "durum": [
+        "kart",
+        "fan",
+        "gaz",
+        "alev",
+        "kullanim"
+      ],
+      "vurgu": [
+        "plaka",
+        "musluk",
+        "sebeke"
+      ],
+      "etiketler": [
+        {
+          "parca": "sebeke",
+          "metin": "Soğuk şebeke suyu",
+          "yon": "sag",
+          "soz": "şebeke"
+        },
+        {
+          "parca": "musluk",
+          "metin": "Sıcak su",
+          "yon": "sag",
+          "soz": "musluğa"
+        }
+      ]
+    },
+    {
+      "id": "yogusma",
+      "baslik": "Yoğuşma",
+      "ses": "Yoğuşmalı kombi, baca gazındaki buhardan da ısı kazanır. Böylece daha az gaz harcar.",
+      "kamera": {
+        "x": 720,
+        "y": 400,
+        "z": 1.5
+      },
+      "durum": [
+        "kart",
+        "fan",
+        "gaz",
+        "alev",
+        "isitma",
+        "yogusma"
+      ],
+      "vurgu": [
+        "hx",
+        "baca",
+        "yogusma",
+        "brulor",
+        "fan"
+      ],
+      "etiketler": [
+        {
+          "parca": "baca",
+          "metin": "Baca gazı",
+          "yon": "sag",
+          "soz": "baca"
+        },
+        {
+          "parca": "yogusma",
+          "metin": "Yoğuşma suyu",
+          "yon": "sag",
+          "soz": "buhardan"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,464 @@
+{
+ "ses": {
+  "giris": {
+   "src": "aygitlar/kombi/ses/giris-433129af.mp3",
+   "frames": 136,
+   "metin": "Kombi, hem evi hem de musluk suyunu ısıtır. Peki nasıl?",
+   "okunan": "Kombi, hem evi hem de musluk suyunu ısıtır. Peki nasıl?",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Kombi,",
+     "bas": 0,
+     "son": 18
+    },
+    {
+     "k": "hem",
+     "bas": 24,
+     "son": 30
+    },
+    {
+     "k": "evi",
+     "bas": 32,
+     "son": 40
+    },
+    {
+     "k": "hem",
+     "bas": 49,
+     "son": 54
+    },
+    {
+     "k": "de",
+     "bas": 55,
+     "son": 57
+    },
+    {
+     "k": "musluk",
+     "bas": 59,
+     "son": 68
+    },
+    {
+     "k": "suyunu",
+     "bas": 69,
+     "son": 78
+    },
+    {
+     "k": "ısıtır.",
+     "bas": 79,
+     "son": 93
+    },
+    {
+     "k": "Peki",
+     "bas": 110,
+     "son": 117
+    },
+    {
+     "k": "nasıl?",
+     "bas": 118,
+     "son": 137
+    }
+   ]
+  },
+  "atesleme": {
+   "src": "aygitlar/kombi/ses/atesleme-e4132be9.mp3",
+   "frames": 146,
+   "metin": "Kart komut verir; fan havayı çeker, gaz valfi açılır ve brülör yanar.",
+   "okunan": "Kart komut verir; fan havayı çeker, gaz valfi açılır ve brülör yanar.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Kart",
+     "bas": 0,
+     "son": 8
+    },
+    {
+     "k": "komut",
+     "bas": 9,
+     "son": 16
+    },
+    {
+     "k": "verir;",
+     "bas": 18,
+     "son": 31
+    },
+    {
+     "k": "fan",
+     "bas": 41,
+     "son": 47
+    },
+    {
+     "k": "havayı",
+     "bas": 48,
+     "son": 56
+    },
+    {
+     "k": "çeker,",
+     "bas": 57,
+     "son": 72
+    },
+    {
+     "k": "gaz",
+     "bas": 77,
+     "son": 84
+    },
+    {
+     "k": "valfi",
+     "bas": 86,
+     "son": 94
+    },
+    {
+     "k": "açılır",
+     "bas": 95,
+     "son": 106
+    },
+    {
+     "k": "ve",
+     "bas": 112,
+     "son": 116
+    },
+    {
+     "k": "brülör",
+     "bas": 117,
+     "son": 128
+    },
+    {
+     "k": "yanar.",
+     "bas": 130,
+     "son": 148
+    }
+   ]
+  },
+  "isinma": {
+   "src": "aygitlar/kombi/ses/isinma-eff547fe.mp3",
+   "frames": 151,
+   "metin": "Alev, ana eşanjördeki suyu ısıtır. Pompa bu suyu peteklere gönderir.",
+   "okunan": "Alev, ana eşanjördeki suyu ısıtır. Pompa bu suyu peteklere gönderir.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Alev,",
+     "bas": 0,
+     "son": 14
+    },
+    {
+     "k": "ana",
+     "bas": 19,
+     "son": 25
+    },
+    {
+     "k": "eşanjördeki",
+     "bas": 27,
+     "son": 47
+    },
+    {
+     "k": "suyu",
+     "bas": 48,
+     "son": 55
+    },
+    {
+     "k": "ısıtır.",
+     "bas": 56,
+     "son": 70
+    },
+    {
+     "k": "Pompa",
+     "bas": 80,
+     "son": 94
+    },
+    {
+     "k": "bu",
+     "bas": 100,
+     "son": 104
+    },
+    {
+     "k": "suyu",
+     "bas": 106,
+     "son": 112
+    },
+    {
+     "k": "peteklere",
+     "bas": 114,
+     "son": 128
+    },
+    {
+     "k": "gönderir.",
+     "bas": 129,
+     "son": 153
+    }
+   ]
+  },
+  "devre": {
+   "src": "aygitlar/kombi/ses/devre-44dffdb6.mp3",
+   "frames": 169,
+   "metin": "Su, petekleri ısıtıp soğur ve kombiye geri döner. Bu, kapalı bir devredir.",
+   "okunan": "Su, petekleri ısıtıp soğur ve kombiye geri döner. Bu, kapalı bir devredir.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Su,",
+     "bas": 0,
+     "son": 15
+    },
+    {
+     "k": "petekleri",
+     "bas": 18,
+     "son": 33
+    },
+    {
+     "k": "ısıtıp",
+     "bas": 34,
+     "son": 44
+    },
+    {
+     "k": "soğur",
+     "bas": 45,
+     "son": 55
+    },
+    {
+     "k": "ve",
+     "bas": 63,
+     "son": 67
+    },
+    {
+     "k": "kombiye",
+     "bas": 68,
+     "son": 79
+    },
+    {
+     "k": "geri",
+     "bas": 81,
+     "son": 86
+    },
+    {
+     "k": "döner.",
+     "bas": 87,
+     "son": 100
+    },
+    {
+     "k": "Bu,",
+     "bas": 114,
+     "son": 126
+    },
+    {
+     "k": "kapalı",
+     "bas": 130,
+     "son": 140
+    },
+    {
+     "k": "bir",
+     "bas": 141,
+     "son": 145
+    },
+    {
+     "k": "devredir.",
+     "bas": 147,
+     "son": 170
+    }
+   ]
+  },
+  "musluk": {
+   "src": "aygitlar/kombi/ses/musluk-bbd28836.mp3",
+   "frames": 190,
+   "metin": "Musluğu açınca akış sensörü bunu algılar. Üç yollu vana, sıcak suyu plakalı eşanjöre çevirir.",
+   "okunan": "Musluğu açınca akış sensörü bunu algılar. Üç yollu vana, sıcak suyu plakalı eşanjöre çevirir.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Musluğu",
+     "bas": 0,
+     "son": 12
+    },
+    {
+     "k": "açınca",
+     "bas": 14,
+     "son": 26
+    },
+    {
+     "k": "akış",
+     "bas": 30,
+     "son": 38
+    },
+    {
+     "k": "sensörü",
+     "bas": 39,
+     "son": 50
+    },
+    {
+     "k": "bunu",
+     "bas": 51,
+     "son": 56
+    },
+    {
+     "k": "algılar.",
+     "bas": 57,
+     "son": 75
+    },
+    {
+     "k": "Üç",
+     "bas": 87,
+     "son": 92
+    },
+    {
+     "k": "yollu",
+     "bas": 94,
+     "son": 102
+    },
+    {
+     "k": "vana,",
+     "bas": 103,
+     "son": 115
+    },
+    {
+     "k": "sıcak",
+     "bas": 120,
+     "son": 129
+    },
+    {
+     "k": "suyu",
+     "bas": 131,
+     "son": 136
+    },
+    {
+     "k": "plakalı",
+     "bas": 138,
+     "son": 151
+    },
+    {
+     "k": "eşanjöre",
+     "bas": 153,
+     "son": 169
+    },
+    {
+     "k": "çevirir.",
+     "bas": 170,
+     "son": 192
+    }
+   ]
+  },
+  "sicaksu": {
+   "src": "aygitlar/kombi/ses/sicaksu-4ce1fb5d.mp3",
+   "frames": 115,
+   "metin": "Şebeke suyu orada anında ısınır ve musluğa akar.",
+   "okunan": "Şebeke suyu orada anında ısınır ve musluğa akar.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Şebeke",
+     "bas": 0,
+     "son": 12
+    },
+    {
+     "k": "suyu",
+     "bas": 14,
+     "son": 22
+    },
+    {
+     "k": "orada",
+     "bas": 30,
+     "son": 39
+    },
+    {
+     "k": "anında",
+     "bas": 41,
+     "son": 55
+    },
+    {
+     "k": "ısınır",
+     "bas": 56,
+     "son": 69
+    },
+    {
+     "k": "ve",
+     "bas": 77,
+     "son": 81
+    },
+    {
+     "k": "musluğa",
+     "bas": 82,
+     "son": 95
+    },
+    {
+     "k": "akar.",
+     "bas": 97,
+     "son": 117
+    }
+   ]
+  },
+  "yogusma": {
+   "src": "aygitlar/kombi/ses/yogusma-b7ea7bb8.mp3",
+   "frames": 172,
+   "metin": "Yoğuşmalı kombi, baca gazındaki buhardan da ısı kazanır. Böylece daha az gaz harcar.",
+   "okunan": "Yoğuşmalı kombi, baca gazındaki buhardan da ısı kazanır. Böylece daha az gaz harcar.",
+   "kimlik": "eleven:gsJ9nrlXYbPztJxC4fwc:eleven_multilingual_v2:704f5d",
+   "kelimeler": [
+    {
+     "k": "Yoğuşmalı",
+     "bas": 0,
+     "son": 17
+    },
+    {
+     "k": "kombi,",
+     "bas": 18,
+     "son": 34
+    },
+    {
+     "k": "baca",
+     "bas": 39,
+     "son": 46
+    },
+    {
+     "k": "gazındaki",
+     "bas": 48,
+     "son": 61
+    },
+    {
+     "k": "buhardan",
+     "bas": 62,
+     "son": 74
+    },
+    {
+     "k": "da",
+     "bas": 76,
+     "son": 79
+    },
+    {
+     "k": "ısı",
+     "bas": 81,
+     "son": 86
+    },
+    {
+     "k": "kazanır.",
+     "bas": 88,
+     "son": 104
+    },
+    {
+     "k": "Böylece",
+     "bas": 114,
+     "son": 126
+    },
+    {
+     "k": "daha",
+     "bas": 129,
+     "son": 137
+    },
+    {
+     "k": "az",
+     "bas": 138,
+     "son": 142
+    },
+    {
+     "k": "gaz",
+     "bas": 144,
+     "son": 149
+    },
+    {
+     "k": "harcar.",
+     "bas": 151,
+     "son": 173
+    }
+   ]
+  }
+ },
+ "muzik": "aygitlar/kombi/muzik.wav",
+ "muzikKare": 1210
+}

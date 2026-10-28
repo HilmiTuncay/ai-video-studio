@@ -1,0 +1,5 @@
+requests>=2.31
+numpy>=1.26
+scipy>=1.11
+# isteğe bağlı: telaffuz kontrolü (python tools/ses.py kontrol)
+# faster-whisper>=1.0

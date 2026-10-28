@@ -1,0 +1,11 @@
+{
+ "_aciklama": "Genel okunuş sözlüğü: seslendirme metni (sahneler[].ses) resmi yazımla durur, TTS'e gitmeden hemen önce tools/okunus.py bu tabloyu uygular. Aygıta özel okunuşlar icerik/<aygit>/aygit.json 'okunus' listesindedir ve bu tablodan önce gelir. Tümü büyük harf yazımlar (kısaltmalar) yalnızca aynen eşleşir; diğerleri büyük/küçük harf duyarsızdır. Ek kesme işaretiyle korunur. Az ama doğru tutun; her ekleme docs/DUZELTMELER.md'ye de yazılır.",
+ "terimler": {
+  "NTC": "en te ce",
+  "LED": "led",
+  "PCB": "pe ce be",
+  "Wi-Fi": "vay fay",
+  "USB": "yu es bi",
+  "e-posta": "e posta"
+ }
+}
